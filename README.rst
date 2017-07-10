@@ -8,27 +8,6 @@
 .. image:: https://coveralls.io/repos/github/kastellanos/ckanext-bogota_theme/badge.svg?branch=master
 :target: https://coveralls.io/github/kastellanos/ckanext-bogota_theme?branch=master
 
-
-.. image:: https://pypip.in/download/ckanext-bogota_theme/badge.svg
-    :target: https://pypi.python.org/pypi//ckanext-bogota_theme/
-    :alt: Downloads
-
-.. image:: https://pypip.in/version/ckanext-bogota_theme/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-bogota_theme/
-    :alt: Latest Version
-
-.. image:: https://pypip.in/py_versions/ckanext-bogota_theme/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-bogota_theme/
-    :alt: Supported Python versions
-
-.. image:: https://pypip.in/status/ckanext-bogota_theme/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-bogota_theme/
-    :alt: Development Status
-
-.. image:: https://pypip.in/license/ckanext-bogota_theme/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-bogota_theme/
-    :alt: License
-
 =============
 ckanext-bogota_theme
 =============
