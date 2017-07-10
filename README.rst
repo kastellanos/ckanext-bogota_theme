@@ -5,8 +5,9 @@
 .. image:: https://travis-ci.com/kastellanos/ckanext-bogota_theme.svg?token=uoQxW2NxRfW6itGYtmp8&branch=master
     :target: https://travis-ci.com/kastellanos/ckanext-bogota_theme
 
-.. image:: https://coveralls.io/repos/kastellanos/ckanext-bogota_theme/badge.svg
-  :target: https://coveralls.io/r/kastellanos/ckanext-bogota_theme
+.. image:: https://coveralls.io/repos/github/kastellanos/ckanext-bogota_theme/badge.svg?branch=master
+:target: https://coveralls.io/github/kastellanos/ckanext-bogota_theme?branch=master
+
 
 .. image:: https://pypip.in/download/ckanext-bogota_theme/badge.svg
     :target: https://pypi.python.org/pypi//ckanext-bogota_theme/
