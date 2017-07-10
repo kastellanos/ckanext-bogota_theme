@@ -6,7 +6,7 @@
     :target: https://travis-ci.com/kastellanos/ckanext-bogota_theme
 
 .. image:: https://coveralls.io/repos/github/kastellanos/ckanext-bogota_theme/badge.svg?branch=master
-:target: https://coveralls.io/github/kastellanos/ckanext-bogota_theme?branch=master
+    :target: https://coveralls.io/github/kastellanos/ckanext-bogota_theme?branch=master
 
 =============
 ckanext-bogota_theme
