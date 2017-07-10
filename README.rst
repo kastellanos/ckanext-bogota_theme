@@ -2,8 +2,8 @@
    these badges work. The necessary Travis and Coverage config files have been
    generated for you.
 
-.. image:: https://travis-ci.org/kastellanos/ckanext-bogota_theme.svg?branch=master
-    :target: https://travis-ci.org/kastellanos/ckanext-bogota_theme
+.. image:: https://travis-ci.com/kastellanos/ckanext-bogota_theme.svg?branch=master
+    :target: https://travis-ci.com/kastellanos/ckanext-bogota_theme
 
 .. image:: https://coveralls.io/repos/kastellanos/ckanext-bogota_theme/badge.svg
   :target: https://coveralls.io/r/kastellanos/ckanext-bogota_theme
