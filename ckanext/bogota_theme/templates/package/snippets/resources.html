@@ -11,6 +11,7 @@ Example:
   {% snippet "package/snippets/resources.html", pkg=pkg, active=res.id %}
 
 #}
+{#
 {% set resources = pkg.resources or [] %}
 {% if resources %}
   {% block resources %}
@@ -32,3 +33,4 @@ Example:
     </section>
   {% endblock %}
 {% endif %}
+#}

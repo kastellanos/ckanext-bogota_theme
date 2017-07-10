@@ -8,7 +8,7 @@
 
 <form {% if form_id %}id="{{ form_id }}" {% endif %}class="search-form{% if no_bottom_border %} no-bottom-border{% endif %}" method="get" data-module="select-switch">
 
-  {% block search_input %}
+  {#{% block search_input %}
     <div class="search-input control-group {{ search_class }}">
       <input type="text" class="search" name="q" value="{{ query }}" autocomplete="off" placeholder="{{ placeholder }}">
       {% block search_input_button %}
@@ -19,7 +19,7 @@
       {% endblock %}
     </div>
   {% endblock %}
-
+  #}
   {% block search_search_fields %}
     {% if fields -%}
       <span>{{ form.hidden_from_list(fields=fields) }}</span>

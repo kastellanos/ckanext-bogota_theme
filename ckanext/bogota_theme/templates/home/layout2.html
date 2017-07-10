@@ -1,35 +1,33 @@
-<div role="main" class="hero">
-  <div class="container">
-    <div class="row row1">
-      <div class="span6 col1">
-        {% block search %}
-          {% snippet 'home/snippets/search.html' %}
+{% set stats = h.get_site_statistics() %}
+
+        <div class="row top-slider">
+          <div class="container top-bar">
+            <div class="messages-slider">
+              <div class="row">
+                <div class="col-md-6 text-a2 m blue-dark">Frase de bienvenida sobre los datos abiertos de la ciudad</div>
+                <div class="col-md-6 text-a2 m orange">
+                  <div class="col-md-4">&nbsp;</div>
+                  <div class="col-md-8">
+                    {% block stats %}
+                    {% snippet 'home/snippets/stats.html' %}
+                    {% endblock %}
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% block main_content %}
+            <div class="container background-white">
+            {% block search %}
+            {% snippet 'home/snippets/search.html' %}
+            {% endblock %}
+
+            {% block updated_packages %}
+            {% snippet 'home/snippets/updated_packages.html' %}
+            {% endblock %}
+            </div> <!-- /container -->
         {% endblock %}
-        {% block stats %}
-          {% snippet 'home/snippets/stats.html' %}
-        {% endblock %}
-      </div>
-      <div class="span6 col2">
-        {% block promoted %}
-          {% snippet 'home/snippets/promoted.html' %}
-        {% endblock %}
-      </div>
-    </div>
-  </div>
-</div>
-<div role="main">
-  <div class="container">
-    <div class="row row2">
-      <div class="span6 col2">
-        {% block featured_organization %}
-          {% snippet 'home/snippets/featured_organization.html' %}
-        {% endblock %}
-      </div>
-      <div class="span6 col1">
-        {% block featured_group %}
-          {% snippet 'home/snippets/featured_group.html' %}
-        {% endblock %}
-      </div>
-    </div>
-  </div>
-</div>
+
+

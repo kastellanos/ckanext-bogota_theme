@@ -1,0 +1,48 @@
+{% set packages = h.all_packages() %}
+
+<div class="text-a3 m center-block text-center blue-middle">Datasets actualizados recientemente</div>
+
+<div class="margin-bt-30"></div>
+
+<div class="row">
+    {% for pkg in packages %}
+    <div class="col-md-3">
+        <div class="dataset-home">
+
+            <div class="dataset-home-photo margin-bt-20"><img src="img/dataset.png" alt="Nombre del Dataset"/></div>
+            <div class="text-a5 blue-middle margin-bt-20 margin-left-3"><a href="{{ h.url_for(controller='package', action='read', id=pkg.name) }}">{{ pkg.title }}</a></div>
+
+            <div class="block-left margin-left-3">
+                <div class="icon-dataset-addon">
+                    <object type="image/svg+xml" data="img/downloads.svg" >
+                        Su navegador no soporta SVG
+                    </object>
+                </div>
+                <div class="name-addon text-a5">999 descargas</div>
+            </div>
+            <div class="block-right">
+                <div class="icon-dataset-addon">
+                    <object type="image/svg+xml" data="img/visits.svg" >
+                        Su navegador no soporta SVG
+                    </object>
+                </div>
+                <div class="name-addon text-a5">999 visitas</div>
+            </div>
+            <br>
+            <span class="text-a5 gray margin-left-3" style="padding-bottom: 8px;">Última actualización: 08/06/2017</span>
+            <br>
+            <div class="line-blue"></div>
+
+            <div class="icon-entity text-center"><img src="/uploads/group/{{pkg.organization.image_url}}"></div>
+            <!--<div class="icon-entity text-center"><img src="http://ckan.vivelabbogotadev.co/uploads/group/2016-02-11-154944.609581logobomberos.png"></div>-->
+            <div class="name-entity text-a5 m blue-middle">{{ pkg.organization.title }}</div>
+            <br><br><br><br>
+
+        </div>
+    </div>
+    {% endfor %}
+
+
+</div>
+
+<div class="margin-bt-40"></div>

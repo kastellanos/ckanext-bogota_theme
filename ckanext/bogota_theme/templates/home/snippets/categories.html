@@ -1,0 +1,20 @@
+{% set groups = h.all_groups() %}
+<div class="row">
+    <div class="margin-bt-18"></div>
+    <div class="col-md-12"><span class="blue-middle text-a3 m">Explora Datasets por categorías</span></div>
+    <div class="row margin-bt-25"></div>
+{% for group in groups %}
+{% set type = group.type or 'group' %}
+{% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}
+<div class="col-md-3">
+    <div class="icon-dataset">
+        <object type="image/svg+xml" data="img/icono_prueba.svg" >
+            Su navegador no soporta SVG
+        </object>
+    </div>
+    <div class="name-category text-a5 m blue-dark"><a href="{{ url }}" title="{{ _('View {name}').format(name=group.display_name) }}" class="media-view">
+        <span>{{ group.display_name }}</span>
+    </a></div>
+</div>
+{% endfor %}
+</div>

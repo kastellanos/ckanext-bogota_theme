@@ -1,21 +1,33 @@
 {% set tags = h.get_facet_items_dict('tags', limit=3) %}
 {% set placeholder = _('E.g. environment') %}
 
-<div class="module module-search module-narrow module-shallow box">
-  <form class="module-content search-form" method="get" action="{% url_for controller='package', action='search' %}">
-    <h3 class="heading">{{ _("Search data") }}</h3>
-    <div class="search-input control-group search-giant">
-      <input type="text" class="search" name="q" value="" autocomplete="off" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}" />
-      <button type="submit">
-        <i class="icon-search"></i>
-        <span>{{ _('Search') }}</span>
-      </button>
+
+
+  <div class="search-box">
+    <div class="row">
+      <div class="col-md-12">
+        <form class="search-form" method="get" action="{% url_for controller='package', action='search' %}">
+        <div class="input-group">
+          <input class="form-control search" aria-label="Búsqueda de Datasets" name="q" value="" autocomplete="off" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}">
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default background-search" aria-label="Buscar"><span class="glyphicon glyphicon-search"></span></button>
+          </div>
+        </div>
+        </form>
+      </div>
+
     </div>
-  </form>
-  <div class="tags">
-    <h3>{{ _('Popular tags') }}</h3>
-    {% for tag in tags %}
-      <a class="tag" href="{% url_for controller='package', action='search', tags=tag.name %}">{{ h.truncate(tag.display_name, 22) }}</a>
-    {% endfor %}
+    {% block categories %}
+    {% snippet 'home/snippets/categories.html' %}
+    {% endblock %}
+
+
   </div>
-</div>
+  <div class="margin-bt-40"></div>
+
+
+
+
+
+
