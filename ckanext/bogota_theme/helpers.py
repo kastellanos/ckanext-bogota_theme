@@ -14,9 +14,8 @@ def all_groups():
     return groups
 
 def all_packages():
-    '''Return a sorted list of the groups with the most datasets.'''
-    # Get a list of all the site's groups from CKAN, sorted by number of
-    # datasets.
+    '''Return a sorted list of the packages with the most recent modifications.'''
+    # Get a list of all the packages from CKAN, sorted by date.
     context = {'ignore_auth': True,
                'for_view': True
               }
