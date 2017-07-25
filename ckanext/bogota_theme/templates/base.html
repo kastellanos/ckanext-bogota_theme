@@ -63,18 +63,12 @@
 
         {%- block page %}{% endblock -%}
 
-        {#
-        DO NOT USE THIS BLOCK FOR ADDING SCRIPTS
-        Scripts should be loaded by the {% resource %} tag except in very special
-        circumstances
-        #}
-        {%- block scripts %}
-    <script src="js/vendor/modernizr.js"></script>
+               
+        <script src="js/vendor/modernizr.js"></script>
         <script src="js/vendor/jquery.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        {% endblock -%}
 
         {% block body_extras -%}
         {# defined in the config.ini under "ckan.template_footer_end" #}

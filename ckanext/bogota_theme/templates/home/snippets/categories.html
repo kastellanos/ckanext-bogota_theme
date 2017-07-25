@@ -8,10 +8,11 @@
     </div>
 </div>
 
+
 <div class="row layer-category" id="demo" class="collapse">
     <div class="margin-bt-18 hidden-xs"></div>
     <div class="row margin-bt-25 hidden-xs"></div>
-    
+
     {% for group in groups %}
     {% set type = group.type or 'group' %}
     {% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}

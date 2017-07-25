@@ -1,0 +1,7 @@
+
+        [ckan.plugins]
+        bogota_theme=ckanext.bogota_theme.plugin:Bogota_ThemePlugin
+
+        [babel.extractors]
+        ckan = ckan.lib.extract:extract_ckan
+    
