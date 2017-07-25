@@ -3,31 +3,24 @@
 
 
 
-  <div class="search-box">
+<div class="search-box">
     <div class="row">
-      <div class="col-md-12">
-        <form class="search-form" method="get" action="{% url_for controller='package', action='search' %}">
-        <div class="input-group">
-          <input class="form-control search" aria-label="Búsqueda de Datasets" name="q" value="" autocomplete="off" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}">
-
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default background-search" aria-label="Buscar"><span class="glyphicon glyphicon-search"></span></button>
-          </div>
+        <div class="col-md-12 col-sm-12">
+            <form class="search-form" method="get" action="{% url_for controller='package', action='search' %}">
+            <div class="input-group">
+                <input class="form-control" aria-label="Búsqueda de Datasets" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default background-search" aria-label="Buscar" id="search-datasets"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+            </div>
+            </form>
         </div>
-        </form>
-      </div>
-
     </div>
     {% block categories %}
     {% snippet 'home/snippets/categories.html' %}
     {% endblock %}
 
 
-  </div>
-  <div class="margin-bt-40"></div>
-
-
-
-
-
+</div>
+<div class="margin-bt-40"></div>
 

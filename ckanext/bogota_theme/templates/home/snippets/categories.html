@@ -1,20 +1,29 @@
 {% set groups = h.all_groups() %}
-<div class="row">
-    <div class="margin-bt-18"></div>
-    <div class="col-md-12"><span class="blue-middle text-a3 m">Explora Datasets por categorías</span></div>
-    <div class="row margin-bt-25"></div>
-{% for group in groups %}
-{% set type = group.type or 'group' %}
-{% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}
-<div class="col-md-3">
-    <div class="icon-dataset">
-        <object type="image/svg+xml" data="img/icono_prueba.svg" >
-            Su navegador no soporta SVG
-        </object>
+
+
+<div class="row text-category">
+    <div class="col-md-12 col-sm-12 text-center "><span class="blue-middle text-a3 m ">Explora conjunto de datos por categorías</span>
+        <a class="icon-row-direction collapsed" data-toggle="collapse" data-target="#demo" aria-expanded="false" aria-controls="navbar">
+        </a>
     </div>
-    <div class="name-category text-a5 m blue-dark"><a href="{{ url }}" title="{{ _('View {name}').format(name=group.display_name) }}" class="media-view">
-        <span>{{ group.display_name }}</span>
-    </a></div>
 </div>
-{% endfor %}
+
+<div class="row layer-category" id="demo" class="collapse">
+    <div class="margin-bt-18 hidden-xs"></div>
+    <div class="row margin-bt-25 hidden-xs"></div>
+    
+    {% for group in groups %}
+    {% set type = group.type or 'group' %}
+    {% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}
+    <div class="col-xs-12 col-md-3 margin-bt-5">
+        <div class="icon-dataset">
+            <object type="image/svg+xml" data="img/icono_prueba.svg" >
+                Su navegador no soporta SVG
+            </object>
+        </div>
+        <div class="name-category text-a5 m blue-dark">
+            <a href="{{ url }}" title="{{ _('View {name}').format(name=group.display_name) }}" class="media-view" id="link-category-01">{{ group.display_name }}</a>
+        </div>
+    </div>
+    {% endfor %}
 </div>

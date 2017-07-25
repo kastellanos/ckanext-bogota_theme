@@ -1,33 +1,34 @@
 {% set stats = h.get_site_statistics() %}
+<!-- slider -->
+<div class="top-slider">
+    <div class="container">
+        <div class="messages-slider">
 
-        <div class="row top-slider">
-          <div class="container top-bar">
-            <div class="messages-slider">
-              <div class="row">
-                <div class="col-md-6 text-a2 m blue-dark">Frase de bienvenida sobre los datos abiertos de la ciudad</div>
-                <div class="col-md-6 text-a2 m orange">
-                  <div class="col-md-4">&nbsp;</div>
-                  <div class="col-md-8">
+            <div class="col-md-6 text-a2 m blue-dark">Frase de bienvenida sobre los datos abiertos de la ciudad
+                <span class="margin-bt-inline">&nbsp;</span>
+                <a href="#" class="btn btn-dataset" role="button" id="know-more">Saber más</a>
+            </div>
+            <div class="col-md-6 text-a2 m orange number-data">
+                <div class="col-md-4">&nbsp;</div>
+                <div class="col-md-8">
                     {% block stats %}
                     {% snippet 'home/snippets/stats.html' %}
                     {% endblock %}
-
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
+
         </div>
-        {% block main_content %}
-            <div class="container background-white">
-            {% block search %}
-            {% snippet 'home/snippets/search.html' %}
-            {% endblock %}
+    </div>
+</div>
 
-            {% block updated_packages %}
-            {% snippet 'home/snippets/updated_packages.html' %}
-            {% endblock %}
-            </div> <!-- /container -->
-        {% endblock %}
+{% block main_content %}
+<div class="container background-white">
+    {% block search %}
+    {% snippet 'home/snippets/search.html' %}
+    {% endblock %}
 
-
+    {% block updated_packages %}
+    {% snippet 'home/snippets/updated_packages.html' %}
+    {% endblock %}
+</div> <!-- /container -->
+{% endblock %}

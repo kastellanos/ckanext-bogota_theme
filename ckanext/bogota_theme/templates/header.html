@@ -1,112 +1,102 @@
 {% set stats = h.get_site_statistics() %}
 {% block header_wrapper %}
-<header class="header-page background-blue-dark">
+<!-- header -->
+<header class="background-white">
+    <!-- container -->
+    <div class="container">
+        {% block header_account_container_content %} 
+        <!-- top-bar -->
+        <div class="top-bar row">
+            <div class="col-md-3 col-xs-12 col-sm-12 background-blue-dark">
+                <div class="row">
+                    <div class="col-xs-10 col-sm-10">
+                        <div class="logo">
+                            <a href="{{ h.url_for('home') }}" class="svg"><object type="image/svg+xml" data="img/logo.svg" >Su navegador no soporta SVG</object></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-xs-offset-1 col-sm-1">
+                        <a class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                           aria-expanded="false" aria-controls="navbar">
+                            <object type="image/svg+xml" data="img/icono_menu.svg" class="icon-menu">
+                                Su navegador no soporta SVG
+                            </object>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 background-white">
+                {% block header_account %}
 
-  <div class="side-1 background-blue-dark"></div>
-  <div class="side-2 background-white">
-    {% block header_debug %}
-    {% if g.debug and not g.debug_supress_header %}
-    <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
-    {% endif %}
-    {% endblock %}
-  </div>
-  <div class="top-bar background-blue-dark">
-    <div class="col-md-3 background-blue-dark">
-      <div class="logo">
-        <a href="{{ h.url_for('home') }}" class="svg"><object type="image/svg+xml" data="img/logo.svg" >Su navegador no soporta SVG</object></a>
-      </div>
-    </div>
-    <div class="col-md-8 background-white">
-      {% block header_account_container_content %}
-      <div class="row log-in">
-        {% if c.userobj %}
-        <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
-          <ul class="nav-login">
-            {% block header_account_logged1 %}
-            {% if c.userobj.sysadmin %}
-            <li>
-              <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
-                <i class="icon-legal" aria-hidden="true"></i>
-                <span class="text">{{ _('Admin') }}</span>
-              </a>
-            </li>
-            {% endif %}
-            <li>
-              <a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
-                {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
-                <span class="username">{{ c.userobj.display_name }}</span>
-              </a>
-            </li>
-            {% set new_activities = h.new_activities() %}
-            <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
-              {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
-              <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
-                <i class="icon-dashboard" aria-hidden="true"></i>
-                <span class="text">{{ _('Dashboard') }}</span>
-                <span class="badge">{{ new_activities }}</span>
-              </a>
-            </li>
-            {% block header_account_settings_link1 %}
-            <li>
-              <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
-                <i class="icon-cog" aria-hidden="true"></i>
-                <span class="text">{{ _('Settings') }}</span>
-              </a>
-            </li>
-            {% endblock %}
-            {% block header_account_log_out_link1 %}
-            <li>
-              <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
-                <i class="icon-signout" aria-hidden="true"></i>
-                <span class="text">{{ _('Log out') }}</span>
-              </a>
-            </li>
-            {% endblock %}
-            {% endblock %}
-          </ul>
+                <div class="row log-in">
+                    <ul class="nav-login">
+                        {% block header_account_notlogged1 %}
+                        <li>{% link_for _('Log in'), controller='user', action='login', class_='login-to-entities' %}</li>
+                        {% if h.check_access('user_create') %}
+                        <li>{% link_for _('Register'), controller='user', action='register', class_='sub' %}</li>
+                        {% endif %}
+                        {% endblock %}                        
+                    </ul>
+
+                </div>
+
+                <div class="row menu">
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav">                     
+                            {% if c.userobj %}
+                            {% block header_account_logged %} {% if c.userobj.sysadmin %}
+                            <li>
+                                <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
+                                    <i class="fa fa-gavel" aria-hidden="true"></i>
+                                    <span class="text">{{ _('Admin') }}</span>
+                                </a>
+                            </li>
+                            {% endif %}
+                            <li>
+                                <a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
+                                    {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
+                                    <span class="username">{{ c.userobj.display_name }}</span>
+                                </a>
+                            </li>
+
+                            {% block header_account_settings_link %}
+                            <li>
+                                <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                    <span class="text">{{ _('Settings') }}</span>
+                                </a>
+                            </li>
+                            {% endblock %} {% block header_account_log_out_link %}
+                            <li>
+                                <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    <span class="text">{{ _('Log out') }}</span>
+                                </a>
+                            </li>                                                        
+                            {% endblock %} {% endblock %}
+
+                            {% else %}
+                                <li><a href="#" id="datasets">Conjunto de datos</a></li>
+                                <li><a href="#" id="entities">Entidades</a></li>
+                                <li><a href="#" id="about-us">Acerda de</a></li>
+                                <li class="visible-xs visible-sm"><a href="#" class="login-to-entities">Inicio sesion para entidades</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                {% endblock %}
+            </div>
+            <div class="col-md-1 background-white">
+                <div class="logo-bogota-top">
+                    <object type="image/svg+xml" data="img/logo_bogota_mejor_para_todos.svg" >
+                        Su navegador no soporta SVG
+                    </object>
+                </div>
+            </div>
         </div>
-        {% else %}
-        <nav class="account not-authed">
-          <ul class="unstyled">
-            {% block header_account_notlogged1 %}
-            <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
-            {% if h.check_access('user_create') %}
-            <li>{% link_for _('Register'), controller='user', action='register', class_='sub' %}</li>
-            {% endif %}
-            {% endblock %}
-          </ul>
-        </nav>
-        {% endif %}
-      </div>
-      {% endblock %}
-      {% block header_site_navigation %}
-      <div class="row menu">
-
-        <ul class="nav">
-          {% block header_site_navigation_tabs %}
-          {{ h.build_nav_main(
-          ('search', _('Datasets')),
-          ('organizations_index', _('Organizations')),
-          ('about', _('About'))
-          ) }}
-          {% endblock %}
-        </ul>
-
-      </div>
-      {% endblock %}
+        <!-- end top-bar -->
+        {% endblock %}
     </div>
-    <div class="col-md-1 background-white">
-      <div class="logo-bogota-top">
-        <object type="image/svg+xml" data="img/logo_bogota_mejor_para_todos.svg" >
-          Su navegador no soporta SVG
-        </object>
-      </div>
-    </div>
-  </div>
-
-
-
+    <!-- end container -->
 </header>
-
 {% endblock %}
-

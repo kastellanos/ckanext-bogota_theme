@@ -1,10 +1,3 @@
-/*/styles
-    Created on : 28/06/2017, 03:14:27 PM
-    Author     : Jesus Rodriguez Miranda
-*/
-/*
-    Created on : 28/06/2017, 04:09:49 PM
-*/
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -6772,9 +6765,6 @@ General
 body {
   font-family: 'DINPro';
   font-size: 14px;
-  background-image: url('../img/background_blue_light.png');
-  background-position: bottom;
-  background-repeat: repeat;
 }
 footer {
   background-color: #27aae1;
@@ -6819,6 +6809,9 @@ a {
 .text-right {
   text-align: right;
 }
+.margin-bt-5 {
+  margin-bottom: 5px;
+}
 .margin-bt-40 {
   margin-bottom: 40px;
 }
@@ -6833,6 +6826,10 @@ a {
 }
 .margin-bt-30 {
   margin-bottom: 30px;
+}
+.margin-bt-inline {
+  display: table-cell;
+  line-height: 1px;
 }
 .background-white {
   background-color: white;
@@ -6860,12 +6857,34 @@ a.svg:after {
   bottom: 0;
   left: 0;
 }
+.btn-dataset {
+  color: #ffffff;
+  background-color: #ff7a6c;
+  padding-bottom: 7px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 14px;
+  -webkit-box-shadow: 0px 3px 10px 3px rgba(50, 50, 50, 0.24);
+  -moz-box-shadow: 0px 3px 10px 3px rgba(50, 50, 50, 0.24);
+  box-shadow: 0px 3px 10px 3px rgba(50, 50, 50, 0.24);
+}
+.center {
+  text-align: center;
+}
+.margin-10 {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.margin-3 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
 /*
 Header
 */
 .top-bar {
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
   height: 70px;
 }
 .side-1 {
@@ -6887,6 +6906,9 @@ Header
 .top-slider {
   height: 342px;
   background-image: url('../img/slider.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #8de1ff;
 }
 .logo {
   width: 320px;
@@ -6922,46 +6944,16 @@ Header
 /*
 Top Menu
 */
+/*.toggle-menu {
+    display: none;
+}*/
 ul,
 ol {
   list-style: none;
 }
-.nav {
-  float: right;
-  margin-left: -20px;
-  z-index: 100;
-  margin-top: -3px;
-}
-.nav > li {
-  float: left;
-}
-.nav li a {
-  color: #ff7a6c;
-  font-size: 14px;
-  padding: 0;
-  display: block;
-  text-transform: uppercase;
-  font-weight: 500;
-  background-color: transparent;
-}
-.nav li a:hover {
-  background-color: transparent;
-  text-decoration: underline;
-}
-.nav li a:before {
-  content: url('../img/pipe.png');
-  margin-right: 1.3em;
-  font-size: 21px;
-  position: relative;
-}
-.nav li a:after {
-  content: '';
-  font-size: 21px;
-  margin-left: 1.3em;
-}
-.nav li a:active {
-  background-color: transparent;
-}
+/*
+Login Menu
+*/
 .nav-login {
   float: right;
   margin-left: -20px;
@@ -6987,6 +6979,9 @@ ol {
 .nav-login li a:active {
   background-color: transparent;
 }
+/*
+Footer Menu
+*/
 .nav-footer {
   float: right;
   margin-left: -40px;
@@ -7020,13 +7015,10 @@ Slider
   margin-left: 128px;
   margin-right: 128px;
 }
-.sentence {
-  width: 400px;
-}
 .number-of-datasets {
   margin: 0 auto;
   float: left;
-  width: 50%;
+  width: 60%;
 }
 .entities span {
   position: relative;
@@ -7035,7 +7027,7 @@ Slider
 .entities {
   margin: 0 auto;
   float: right;
-  width: 40%;
+  width: 30%;
 }
 .number-of-datasets span {
   position: relative;
@@ -7046,53 +7038,66 @@ Search box
 */
 .search-box {
   margin: 0 auto;
-  background-color: #e6e6e6;
-  width: 768px;
+  background-color: #003e65;
+  width: 800px;
   padding-top: 30px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-bottom: 30px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   z-index: 100;
   margin-top: -18px;
-  -webkit-box-shadow: 0px 3px 10px 3px rgba(199, 199, 199, 0.64);
-  -moz-box-shadow: 0px 3px 10px 3px rgba(199, 199, 199, 0.64);
-  box-shadow: 0px 3px 10px 3px rgba(199, 199, 199, 0.64);
+  -webkit-box-shadow: 0px 3px 10px 3px rgba(50, 50, 50, 0.54);
+  -moz-box-shadow: 0px 3px 10px 3px rgba(50, 50, 50, 0.54);
+  box-shadow: 0px 3px 10px 3px rgba(50, 50, 50, 0.54);
 }
 .background-search {
   background-color: #ff7a6c;
   border-color: #ff7a6c;
   color: #fff;
 }
+.text-category {
+  display: none;
+}
+.icon-row-size {
+  height: 10px;
+  padding-left: 10px;
+}
+.icon-menu {
+  height: 20px;
+}
 /*
 Dataset list
 */
 .icon-dataset object {
   width: 32px;
+  padding: 10% 0;
 }
 .icon-dataset {
+  height: 50px;
   float: left;
-  width: 32px;
-  margin-bottom: 16px;
+  width: 10%;
+  padding: 5% 0;
 }
 .name-category {
-  padding-top: 6px;
-  padding-left: 8px;
-  height: 32px;
+  height: 50px;
   width: 80%;
   float: right;
-  vertical-align: middle;
+  padding-left: 5px;
+  display: table;
 }
 .name-category a {
-  color: #003e65;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
 }
 /*
 Last Datasets
 */
 .dataset-home {
-  height: 350px;
+  height: 325px;
   width: 225px;
   background-color: #f7f7f7;
   margin: 0 auto;
@@ -7154,5 +7159,316 @@ Test
   background-color: rgba(86, 61, 124, 0.15);
   border: 1px solid #ddd;
   border: 1px solid rgba(86, 61, 124, 0.2);
+}
+/*
+    Created on : 12/07/2017, 04:28:12 PM
+*/
+/*
+Media queries
+*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 992px) {
+  /* Styles */
+  html {
+    width: 100%;
+  }
+  .text-a1 {
+    font-size: 26px;
+  }
+  .text-a2 {
+    font-size: 20px;
+  }
+  .text-a3 {
+    font-size: 14px;
+  }
+  .text-a4 {
+    font-size: 14px;
+  }
+  .text-a5 {
+    font-size: 12px;
+  }
+  .m {
+    font-weight: 500;
+  }
+  .top-bar {
+    margin: 0 auto;
+    width: 100%;
+    height: 70px;
+  }
+  .toggle-menu {
+    font-size: 30px;
+    color: #ff7a6c;
+  }
+  .logo {
+    width: 320px;
+    height: 70px;
+  }
+  .logo object {
+    margin-top: 15px;
+    width: 180px;
+  }
+  .container,
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  header {
+    width: 100%;
+    height: 70px;
+  }
+  header .log-in {
+    display: none;
+  }
+  header .logo-bogota-top {
+    display: none;
+  }
+  /*
+    Toggle menu
+    */
+  .menu {
+    height: 0px;
+  }
+  /*.nav {
+        visibility: hidden;
+    }*/
+  a.navbar-toggle {
+    padding-right: 0;
+    margin-top: 12px;
+    margin-right: 0;
+  }
+  #navbar {
+    background-color: white;
+    position: relative;
+    z-index: 1;
+  }
+  .nav li a {
+    color: #ff7a6c;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+  }
+  .nav li a {
+    border-bottom: 1px solid #003e65;
+  }
+  .nav li .login-to-entities {
+    border: none;
+  }
+  .login-to-entities {
+    color: #00cacf !important;
+  }
+  .search-box {
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    z-index: 100;
+    margin-top: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  .icon-dataset {
+    padding: 0;
+    padding-left: 40px;
+  }
+  .layer-category {
+    display: none;
+  }
+  .text-category {
+    display: block;
+    top: 5px;
+    padding: 15px 10px 10px 10px;
+    /* top=1em, right=2em, bottom=3em, left=2em */
+  }
+  .name-category {
+    padding-left: 30px;
+  }
+  .number-data {
+    display: none;
+  }
+  .messages-slider {
+    margin-left: 35px;
+    margin-right: 5px;
+    bottom: 30px;
+  }
+  .top-slider {
+    height: 340px;
+    background-image: url('../img/slider_768.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #8de1ff;
+  }
+  .margin-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .dataset-home {
+    height: 100%;
+    width: 100%;
+    background-color: #e6e6e6;
+    margin: 0 auto 20px auto;
+    /* top=1em, right=2em, bottom=3em, left=2em */
+  }
+  .dataset-home-photo img {
+    width: 100%;
+    height: auto;
+  }
+  footer {
+    padding: 10px;
+  }
+  .nav-footer {
+    float: none;
+    margin-left: 0px;
+    z-index: 100;
+    margin-top: 0px;
+  }
+  footer img {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* Styles */
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (max-width: 992px) {
+  #navbar {
+    margin-top: 70px;
+  }
+  .background-blue-dark {
+    z-index: 2;
+  }
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,
+  .navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+  .collapse.in {
+    display: block !important;
+  }
+  .container {
+    width: 100%;
+  }
+  /* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 993px) {
+  /* Styles */
+  .nav {
+    float: right;
+    margin-left: -20px;
+    z-index: 1;
+    margin-top: -3px;
+  }
+  .nav > li {
+    float: left;
+  }
+  .nav li a {
+    color: #ff7a6c;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    display: block;
+    text-transform: uppercase;
+    background-color: transparent;
+  }
+  .nav li a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  .nav li a:before {
+    content: url('../img/pipe.png');
+    margin-right: 1.3em;
+    font-size: 21px;
+    position: relative;
+  }
+  .nav li a:after {
+    content: '';
+    font-size: 21px;
+    margin-left: 1.3em;
+  }
+  .nav li a:active {
+    background-color: transparent;
+  }
+}
+@media only screen and (min-device-width: 992px) and (max-device-width: 1200px) {
+  .logo object {
+    width: 68%;
+  }
+}
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+/* iPhone 6 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+/* iPhone 6+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+/* Samsung Galaxy S3 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+/* Samsung Galaxy S4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
 }
 /*# sourceMappingURL=styles.css.map */
