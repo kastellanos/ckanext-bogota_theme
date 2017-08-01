@@ -1,4 +1,9 @@
 import ckan.plugins.toolkit as toolkit
+import pprint
+
+from logging import getLogger
+
+log = getLogger(__name__)
 
 def all_groups():
     '''Return a sorted list of the groups with the most datasets.'''
@@ -10,8 +15,16 @@ def all_groups():
     data_dict={'order_by': 'name', 'all_fields': True }
 
     groups = toolkit.get_action('group_list')( context, data_dict )
+    
+    filtered = []
+    
+    log.error("Hola mundo")
+    
+    for group in groups:
+        if group ["package_count"] > 0:
+            filtered.append(group)
 
-    return groups
+    return filtered
 
 def all_packages():
     '''Return a sorted list of the packages with the most recent modifications.'''
