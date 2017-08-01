@@ -16,7 +16,7 @@ def all_groups():
 
     groups = toolkit.get_action('group_list')( context, data_dict )
     
-    filtered = [ filtered_group for group in groups if group ["package_count"] > 0 ]
+    filtered = [ group for group in groups if group ["package_count"] > 0 ]
     log.error(pprint(filtered))
              
 
