@@ -1,6 +1,6 @@
 import ckan.plugins.toolkit as toolkit
-import pprint
 
+from pprint import pprint
 from logging import getLogger
 
 log = getLogger(__name__)
@@ -8,7 +8,7 @@ log = getLogger(__name__)
 def all_groups():
     '''Return a sorted list of the groups with the most datasets.'''
     # Get a list of all the site's groups from CKAN, sorted by number of
-    # datasets.
+    # datasets.pprint()
     context = {'ignore_auth': True,
                'for_view': True
               }
@@ -18,11 +18,11 @@ def all_groups():
     
     filtered = []
     
-    log.error("Hola mundo")
-    
     for group in groups:
+        log.error(pprint(group))
         if group ["package_count"] > 0:
             filtered.append(group)
+            
 
     return filtered
 
