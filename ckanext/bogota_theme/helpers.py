@@ -10,14 +10,8 @@ def all_groups():
     data_dict={'order_by': 'name', 'all_fields': True }
 
     groups = toolkit.get_action('group_list')( context, data_dict )
-    
-    filtered = []
-    
-    for group in groups:
-        if group ["package_count"] > 0:
-            filtered.append(group)
 
-    return filtered
+    return groups
 
 def all_packages():
     '''Return a sorted list of the packages with the most recent modifications.'''
