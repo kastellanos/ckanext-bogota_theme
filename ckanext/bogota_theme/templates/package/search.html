@@ -4,12 +4,12 @@
 {% block subtitle %}{{ _("Datasets") }}{% endblock %}
 
 {% block breadcrumb_content %}
-  <li class="active">{{ h.nav_link(_('Datasets'), controller='package', action='search', highlight_actions = 'new index') }}</li>
+  <li class="active">estoy en search.html {{ h.nav_link(_('Datasets'), controller='package', action='search', highlight_actions = 'new index') }}</li>
 {% endblock %}
 
 {% block primary_content %}
   <section class="module">
-    <div class="module-content">estoy en search.html
+    <div class="module-content">
       {% block page_primary_action %}
         {% if h.check_access('package_create') %}
           <div class="page_primary_action">
