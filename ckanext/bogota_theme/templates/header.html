@@ -40,6 +40,19 @@
                 </div>
 
                 <div class="row menu">
+                    <div class="col-xs-12 hidden-xs hidden-sm col-md-5">
+                        <!-- Datasets search -->
+                        <div class="input-group top-search-container">
+                            <input class="form-control" id="top-search-box" aria-label="Búsqueda de Datasets"
+                                   placeholder="Búsqueda de conjunto de datos">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default background-search" id="top-search-button"
+                                        aria-label="Buscar" id="search-datasets"><span
+                                        class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                        </div>
+                        <!-- end datasets search -->
+                    </div>
 
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav">                     
@@ -76,10 +89,10 @@
                             {% endblock %} {% endblock %}
 
                             {% else %}
-                                <li><a href="/dataset" id="datasets">Conjunto de datos</a></li>
-                                <li><a href="#" id="entities">Entidades</a></li>
-                                <li><a href="#" id="about-us">Acerda de</a></li>
-                                <li class="visible-xs visible-sm"><a href="#" class="login-to-entities">Inicio sesion para entidades</a></li>
+                            <li><a href="/dataset" id="datasets">Conjunto de datos</a></li>
+                            <li><a href="#" id="entities">Entidades</a></li>
+                            <li><a href="#" id="about-us">Acerda de</a></li>
+                            <li class="visible-xs visible-sm"><a href="#" class="login-to-entities">Inicio sesion para entidades</a></li>
                             {% endif %}
                         </ul>
                     </div>
@@ -102,5 +115,5 @@
 {% endblock %}
 
 {% block header_debug %} {% if g.debug and not g.debug_supress_header %}
-  <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
-  {% endif %} {% endblock %}
+<div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
+{% endif %} {% endblock %}
